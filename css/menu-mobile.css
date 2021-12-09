@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Фон */
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #f5f5f5;
+}
+/* Меню */
+.toggle {
+	position: relative;
+	width: 70px;
+	height: 70px;
+	background: #fff;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	overflow: hidden;
+}
+ /* Полоски меню */
+.toggle span {
+	position: absolute;
+	width: 40px;
+	height: 4px;
+	background: darkblue;
+	border-radius: 4px;
+	transition: 0.5s;
+}
+/* Анимация средней полоски */
+.toggle.active span:nth-child(3) {
+	transform: translateX(60px);
+}
+ /* Верхняя полоска */
+.toggle span:nth-child(1) {
+	transform: translateY(-15px);
+	width: 25px;
+	left: 15px;
+}
+/* Анимация верхней полоски */
+.toggle.active span:nth-child(1) {
+	width: 40px;
+	transform: translateY(0px) rotate(45deg);
+}
+ /* Нижняя полоска */
+.toggle span:nth-child(2) {
+	transform: translateY(15px);
+	width: 15px;
+	left: 15px;
+	transition-delay: 0.1s;
+}
+/* Анимация нижней полоски */
+.toggle.active span:nth-child(2) {
+	width: 40px;
+	transform: translateY(0px) rotate(-45deg);
+}
